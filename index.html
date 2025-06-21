@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacation Message & Team Contacts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .vacation-message {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            border: 2px solid #ff6b9d;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .vacation-message::before {
+            content: '🐻🏔️';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 2em;
+            opacity: 0.3;
+        }
+
+        .vacation-message h2 {
+            color: #d63384;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .vacation-message p {
+            color: #6f42c1;
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+
+        .bear-emoji {
+            font-size: 1.5em;
+            margin: 0 5px;
+        }
+
+        .contact-info {
+            background: #e3f2fd;
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .contact-info h3 {
+            color: #1976d2;
+            margin-bottom: 25px;
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .contact-item {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #1976d2;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-name {
+            font-weight: 600;
+            color: #1976d2;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .contact-role {
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .vacation-message {
+                padding: 20px;
+            }
+        }
+    </style>
+
+    <script>
+      
+      const files = {
+        
+      }
+    
+
+
+      window.fs = {}
+      window.fs.readFile = (fileName) => {
+        // return array buffer
+        return new Promise((resolve) => {
+          const content = files[fileName]
+          const decoded = atob(content)
+          const arr = new Uint8Array(decoded.length)
+          for (let i = 0; i < decoded.length; i++) {
+            arr[i] = decoded.charCodeAt(i)
+          }
+          resolve(arr)
+        })
+      }
+    </script>
+    </head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏔️ Out of Office & Team Contacts</h1>
+            <p>Vacation Coverage Information</p>
+        </div>
+
+        <div class="content">
+            <div class="vacation-message">
+                <h2>🏔️ Currently Avoiding Bears in the Mountains! 🐻</h2>
+                <p>I'm off on vacation enjoying the great outdoors <span class="bear-emoji">🐻</span> (and hopefully avoiding any furry friends!). For any urgent matters, please contact the amazing team leads listed below - they've got everything under control while I'm out here conquering trails and dodging wildlife! <span class="bear-emoji">🏔️</span></p>
+            </div>
+
+            <div class="contact-info">
+                <h3>📞 Team Contact Reference</h3>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="contact-name">Windy Wijaya</div>
+                        <div class="contact-role">IoT, ESM and Multi-Suite Planning</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-name">Chenqi Shi</div>
+                        <div class="contact-role">Strategic Programs and Market Analysis</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-name">Malcolm Pilgrim</div>
+                        <div class="contact-role">Core WLS Planning</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-name">Tyler Makhuza</div>
+                        <div class="contact-role">Core WLN Planning and TBS RGUs</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-name">Kelly Shawchuk</div>
+                        <div class="contact-role">Channel Performance and Digital Tools</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
